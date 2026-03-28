@@ -79,7 +79,11 @@
 
   <!-- ═══ HERO SECTION ═══ -->
   <section id="home" class="hero-section">
-    <div class="hero-bg-img" style="background-image:url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1920&q=80')"></div>
+    <div class="hero-bg-img">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="videos/hero vid.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
      
@@ -108,7 +112,10 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap" data-aos="fade-right">
-          <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf2263?w=800&q=80" alt="SAVITA SYNTHETICS Factory" class="about-img" />
+          <div class="about-img-click" id="about-img-trigger" title="Click to view full photo">
+            <img src="Images/factory1.jpeg" alt="SAVITA SYNTHETICS Factory — Jayraj Textile Park, Surat" class="about-img" />
+            <div class="about-img-zoom-hint">⊕ View Full Photo</div>
+          </div>
         </div>
         <div class="about-text" data-aos="fade-left">
           <p class="section-label">✦ WHO WE ARE</p>
@@ -188,13 +195,12 @@
       <p class="section-sub" data-aos="fade-up">Explore our premium range of waterjet loom fabrics</p>
       <div class="filter-tabs" data-aos="fade-up">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="chiffon">Chiffon</button>
-        <button class="filter-btn" data-filter="georgette">Georgette</button>
-        <button class="filter-btn" data-filter="crepe">Crepe</button>
-        <button class="filter-btn" data-filter="satin">Satin</button>
-        <button class="filter-btn" data-filter="jacquard">Jacquard</button>
-        <button class="filter-btn" data-filter="organza">Organza</button>
-        <button class="filter-btn" data-filter="other">Others</button>
+        <button class="filter-btn" data-filter="jacquard">Luxury Jacquard</button>
+        <button class="filter-btn" data-filter="lycrasilk">Lycra Silk</button>
+        <button class="filter-btn" data-filter="nebulasilk">Nebula Silk</button>
+        <button class="filter-btn" data-filter="isilk">I-Silk</button>
+        <button class="filter-btn" data-filter="pocketlycra">Pocket Lycra</button>
+        <button class="filter-btn" data-filter="sindoor">Sindoor</button>
       </div>
       <div class="catalogue-grid" id="catalogue-grid">
         <div class="fabric-card" data-category="jacquard" data-aos="fade-up" data-aos-delay="100">
@@ -208,7 +214,7 @@
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
-        <div class="fabric-card" data-category="other" data-aos="fade-up" data-aos-delay="150">
+        <div class="fabric-card" data-category="lycrasilk" data-aos="fade-up" data-aos-delay="150">
           <div class="fabric-img-wrap">
             <img src="Images/Lycra Silk 1.png" alt="Lycra Silk" />
             <div class="fabric-hover-overlay"></div>
@@ -219,7 +225,7 @@
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
-        <div class="fabric-card" data-category="other" data-aos="fade-up" data-aos-delay="200">
+        <div class="fabric-card" data-category="nebulasilk" data-aos="fade-up" data-aos-delay="200">
           <div class="fabric-img-wrap">
             <img src="Images/Nebula silk 1.png" alt="Nebula Silk" />
             <div class="fabric-hover-overlay"></div>
@@ -230,42 +236,42 @@
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
-        <div class="fabric-card" data-category="satin" data-aos="fade-up" data-aos-delay="250">
+        <div class="fabric-card" data-category="isilk" data-aos="fade-up" data-aos-delay="250">
           <div class="fabric-img-wrap">
-            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4e5b?w=600&q=80" alt="Bridal Satin" />
+            <img src="Images/I-silk.jpeg" alt="I-Silk" />
             <div class="fabric-hover-overlay"></div>
           </div>
           <div class="fabric-info">
-            <h3>Bridal Satin — 130 GSM</h3>
-            <p>High-sheen luxurious surface, widely used in bridal and occasion wear</p>
+            <h3>I-Silk — 125 GSM</h3>
+            <p>A rich, lustrous fabric with a smooth silk-like finish and excellent body — ideal for premium sarees, dress material and high-end ethnic occasion wear</p>
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
-        <div class="fabric-card" data-category="jacquard" data-aos="fade-up" data-aos-delay="300">
+        <div class="fabric-card" data-category="pocketlycra" data-aos="fade-up" data-aos-delay="300">
           <div class="fabric-img-wrap">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Floral Jacquard" />
+            <img src="Images/Pocket lycra.jpeg" alt="Pocket Lycra" />
             <div class="fabric-hover-overlay"></div>
           </div>
           <div class="fabric-info">
-            <h3>Floral Jacquard — 150 GSM</h3>
-            <p>Intricately woven patterns for premium ethnic and decorative fabric applications</p>
+            <h3>Pocket Lycra — 105 GSM</h3>
+            <p>A structured yet flexible lycra weave with a fine texture and excellent recovery — widely used for trousers, formal bottoms and stretch suiting fabric</p>
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
-        <div class="fabric-card" data-category="organza" data-aos="fade-up" data-aos-delay="350">
+        <div class="fabric-card" data-category="sindoor" data-aos="fade-up" data-aos-delay="350">
           <div class="fabric-img-wrap">
-            <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?w=600&q=80" alt="Organza Shimmer" />
+            <img src="Images/sindoor.png" alt="Sindoor" />
             <div class="fabric-hover-overlay"></div>
           </div>
           <div class="fabric-info">
-            <h3>Organza Shimmer — 40 GSM</h3>
-            <p>Crisp, sheer shimmer fabric for overlays, lehengas and festive wear</p>
+            <h3>Sindoor — 85 GSM</h3>
+            <p>A vibrant, richly pigmented fabric with a smooth drape and bold colour depth — crafted for festive ethnic wear, sarees and statement occasion pieces</p>
             <a href="#contact" class="fabric-cta">Request Quote →</a>
           </div>
         </div>
       </div>
       <div class="catalogue-cta" data-aos="fade-up">
-        <a href="#" class="btn-outline shimmer-btn">📄 Download Full Catalogue</a>
+        <button id="download-catalogue-btn" class="btn-outline shimmer-btn">📄 Download Full Catalogue</button>
       </div>
     </div>
   </section>
@@ -274,48 +280,19 @@
   <section id="gallery" class="gallery-section section-pad">
     <div class="container">
       <p class="section-label" data-aos="fade-up">✦ OUR FACILITY</p>
-      <h2 class="section-heading reveal-heading" data-aos="fade-up">Factory &amp; Fabric Gallery</h2>
+      <h2 class="section-heading reveal-heading" data-aos="fade-up">Factory Gallery</h2>
       <div class="gold-underline centered" data-aos="fade-up"></div>
-      <div class="gallery-filters" data-aos="fade-up">
-        <button class="filter-btn active" data-gfilter="all">All</button>
-        <button class="filter-btn" data-gfilter="factory">Factory Floor</button>
-        <button class="filter-btn" data-gfilter="fabric">Fabric Samples</button>
-      </div>
       <div class="masonry-grid" id="gallery-grid">
         <div class="masonry-item" data-gcat="factory" data-aos="fade-up" data-aos-delay="50">
-          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=80" alt="Factory Floor" />
+          <img src="Images/factory1.jpeg" alt="SAVITA SYNTHETICS Factory — Jayraj Textile Park, Surat" />
           <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
         </div>
-        <div class="masonry-item tall" data-gcat="fabric" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&q=80" alt="Fabric Rolls" />
+        <div class="masonry-item" data-gcat="factory" data-aos="fade-up" data-aos-delay="100">
+          <img src="Images/Facility_1.png" alt="SAVITA SYNTHETICS Facility" />
           <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
         </div>
-        <div class="masonry-item" data-gcat="factory" data-aos="fade-up" data-aos-delay="150">
-          <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf2263?w=700&q=80" alt="Waterjet Loom" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item" data-gcat="fabric" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=700&q=80" alt="Fabric Texture" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item tall" data-gcat="factory" data-aos="fade-up" data-aos-delay="250">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Loom Machine" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item" data-gcat="fabric" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b4e5b?w=700&q=80" alt="Satin Fabric" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item" data-gcat="factory" data-aos="fade-up" data-aos-delay="350">
-          <img src="https://images.unsplash.com/photo-1612423284934-2850a4ea6b0f?w=700&q=80" alt="Factory Interior" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item tall" data-gcat="fabric" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&q=80" alt="Fabric Close-up" />
-          <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
-        </div>
-        <div class="masonry-item" data-gcat="factory" data-aos="fade-up" data-aos-delay="450">
-          <img src="https://images.unsplash.com/photo-1586495777744-4e6232bf2263?w=700&q=80" alt="Production Line" />
+        <div class="masonry-item tall" data-gcat="factory" data-aos="fade-up" data-aos-delay="150">
+          <img src="Images/facility_2.png" alt="SAVITA SYNTHETICS Facility Interior" />
           <div class="gallery-overlay"><span class="zoom-icon">⊕</span></div>
         </div>
       </div>
@@ -406,7 +383,7 @@
               <select>
                 <option value="" disabled selected>Fabric Interest</option>
                 <option>Chiffon</option><option>Georgette</option><option>Crepe</option>
-                <option>Satin</option><option>Jacquard</option><option>Organza</option><option>Other</option>
+                <option>Satin</option><option>Jacquard</option><option>Sindoor</option><option>Other</option>
               </select>
             </div>
             <div class="form-group">
@@ -476,6 +453,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/catalogue-pdf.js"></script>
 </body>
 </html>

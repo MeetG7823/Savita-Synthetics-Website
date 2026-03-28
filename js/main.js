@@ -67,14 +67,7 @@ drawerClose.addEventListener('click', closeDrawer);
 drawerOverlay.addEventListener('click', closeDrawer);
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-/* ── 8. HERO PARALLAX ── */
-const heroBg = document.querySelector('.hero-bg-img');
-if (heroBg) {
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    heroBg.style.transform = `scale(1.1) translateY(${y * 0.25}px)`;
-  }, { passive: true });
-}
+/* ── 8. HERO PARALLAX — disabled for video background ── */
 
 /* ── 9. HEADING REVEAL (GSAP SplitText fallback with word spans) ── */
 document.querySelectorAll('.reveal-heading').forEach(el => {
@@ -241,7 +234,34 @@ new Swiper('.testimonials-swiper', {
   }
 });
 
-/* ── 15. CONTACT FORM ── */
+/* ── 15. ABOUT IMAGE LIGHTBOX ── */
+const aboutTrigger = document.getElementById('about-img-trigger');
+if (aboutTrigger) {
+  aboutTrigger.addEventListener('click', () => {
+    lbImg.src = 'Images/factory1.jpeg';
+    lbImg.alt = 'SAVITA SYNTHETICS Factory — Jayraj Textile Park, Surat';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Hide prev/next since it's a single standalone image
+    lbPrev.style.display = 'none';
+    lbNext.style.display = 'none';
+  });
+}
+
+// Restore prev/next when lightbox closes
+const origClose = lbClose.onclick;
+lbClose.addEventListener('click', () => {
+  lbPrev.style.display = '';
+  lbNext.style.display = '';
+});
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) {
+    lbPrev.style.display = '';
+    lbNext.style.display = '';
+  }
+});
+
+/* ── 16. CONTACT FORM ── */
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('button[type="submit"]');
