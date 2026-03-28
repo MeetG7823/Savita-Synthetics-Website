@@ -409,7 +409,7 @@ a, button, .filter-btn, select, [role="button"], .masonry-item, .fabric-card { c
   margin-left: auto;
   margin-right: auto;
 }
-.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 80px; }
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
 
 .hero-scroll-arrow {
   position: absolute;
