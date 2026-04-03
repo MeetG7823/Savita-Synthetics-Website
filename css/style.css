@@ -1074,3 +1074,17 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── FORM VALIDATION HINTS ── */
+.field-hint {
+  display: block;
+  font-size: 11.5px;
+  margin-top: 5px;
+  padding-left: 2px;
+  min-height: 16px;
+  transition: color 0.3s;
+}
+.field-hint.error { color: #e05555; }
+.field-hint.success { color: #4caf50; }
+.form-group input.invalid { border-bottom-color: #e05555; }
+.form-group input.valid   { border-bottom-color: #4caf50; }

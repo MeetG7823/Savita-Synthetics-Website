@@ -261,19 +261,101 @@ lightbox.addEventListener('click', e => {
   }
 });
 
-/* ── 16. CONTACT FORM ── */
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+/* ── 16. CONTACT FORM — validation + Formspree ── */
+const contactForm  = document.getElementById('contact-form');
+const phoneInput   = document.getElementById('form-phone');
+const emailInput   = document.getElementById('form-email');
+const phoneHint    = document.getElementById('phone-hint');
+const emailHint    = document.getElementById('email-hint');
+
+// Phone: only allow digits, max 10
+phoneInput.addEventListener('input', () => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 10);
+  const len = phoneInput.value.length;
+  if (len === 0) {
+    phoneHint.textContent = ''; phoneInput.classList.remove('valid','invalid');
+  } else if (len < 10) {
+    phoneHint.textContent = `${10 - len} more digit${10 - len > 1 ? 's' : ''} needed`;
+    phoneHint.className = 'field-hint error';
+    phoneInput.classList.replace('valid','invalid') || phoneInput.classList.add('invalid');
+  } else {
+    phoneHint.textContent = '✓ Valid number';
+    phoneHint.className = 'field-hint success';
+    phoneInput.classList.replace('invalid','valid') || phoneInput.classList.add('valid');
+  }
+});
+
+// Email: must contain @gmail.com / @yahoo.com / @outlook.com etc — at minimum a valid domain
+emailInput.addEventListener('blur', () => {
+  const val = emailInput.value.trim();
+  if (!val) { emailHint.textContent = ''; emailInput.classList.remove('valid','invalid'); return; }
+  const validPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const gmailPattern = /^[^\s@]+@gmail\.com$/i;
+  if (!validPattern.test(val)) {
+    emailHint.textContent = 'Enter a valid email address';
+    emailHint.className = 'field-hint error';
+    emailInput.classList.replace('valid','invalid') || emailInput.classList.add('invalid');
+  } else if (!gmailPattern.test(val)) {
+    emailHint.textContent = 'Preferably use a Gmail address';
+    emailHint.className = 'field-hint error';
+    emailInput.classList.replace('valid','invalid') || emailInput.classList.add('invalid');
+  } else {
+    emailHint.textContent = '✓ Valid Gmail address';
+    emailHint.className = 'field-hint success';
+    emailInput.classList.replace('invalid','valid') || emailInput.classList.add('valid');
+  }
+});
+
+contactForm.addEventListener('submit', async function(e) {
   e.preventDefault();
+
+  // Validate phone
+  if (phoneInput.value.length > 0 && phoneInput.value.length < 10) {
+    phoneHint.textContent = 'Phone number must be 10 digits';
+    phoneHint.className = 'field-hint error';
+    phoneInput.focus(); return;
+  }
+  // Validate email
+  const emailVal = emailInput.value.trim();
+  if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal)) {
+    emailHint.textContent = 'Enter a valid email address';
+    emailHint.className = 'field-hint error';
+    emailInput.focus(); return;
+  }
+
   const btn = this.querySelector('button[type="submit"]');
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = '#2a6e2a';
-  btn.style.borderColor = '#2a6e2a';
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const data = new FormData(this);
+    const res  = await fetch(this.action, {
+      method: 'POST', body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      btn.textContent = '✓ Enquiry Sent!';
+      btn.style.background = '#2a6e2a';
+      btn.style.borderColor = '#2a6e2a';
+      this.reset();
+      [phoneInput, emailInput].forEach(el => el.classList.remove('valid','invalid'));
+      [phoneHint, emailHint].forEach(el => { el.textContent = ''; });
+    } else {
+      throw new Error('Server error');
+    }
+  } catch {
+    btn.textContent = '✗ Failed — try again';
+    btn.style.background = '#6e2a2a';
+    btn.style.borderColor = '#8b0000';
+  }
+
   setTimeout(() => {
     btn.textContent = 'Send Enquiry →';
     btn.style.background = '';
     btn.style.borderColor = '';
-    this.reset();
-  }, 3000);
+    btn.disabled = false;
+  }, 3500);
 });
 
 /* ── 16. SMOOTH ANCHOR SCROLL ── */
