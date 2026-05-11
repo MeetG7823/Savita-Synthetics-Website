@@ -173,7 +173,7 @@ let lbImages = [];
 let lbIndex  = 0;
 
 function buildLbImages() {
-  lbImages = Array.from(document.querySelectorAll('.masonry-item:not(.g-hidden) img'));
+  lbImages = Array.from(document.querySelectorAll('.masonry-item:not(.g-hidden) img, .gp-preview-item img'));
 }
 
 function openLightbox(idx) {
@@ -196,6 +196,15 @@ document.querySelectorAll('.masonry-item').forEach((item, i) => {
     const visibleItems = Array.from(document.querySelectorAll('.masonry-item:not(.g-hidden)'));
     const visIdx = visibleItems.indexOf(item);
     openLightbox(visIdx >= 0 ? visIdx : 0);
+  });
+});
+
+document.querySelectorAll('.gp-preview-item').forEach((item) => {
+  item.addEventListener('click', () => {
+    buildLbImages();
+    const allPreviews = Array.from(document.querySelectorAll('.gp-preview-item img'));
+    const idx = allPreviews.indexOf(item.querySelector('img'));
+    openLightbox(idx >= 0 ? idx : 0);
   });
 });
 
@@ -227,6 +236,10 @@ new Swiper('.testimonials-swiper', {
   loop: true,
   autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
   speed: 800,
+  navigation: {
+    nextEl: '#testi-next',
+    prevEl: '#testi-prev',
+  },
   breakpoints: {
     640:  { slidesPerView: 1 },
     768:  { slidesPerView: 2 },
@@ -371,3 +384,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+/* ── 17. PHOTO GALLERY PAGE LINK ── */
+// Gallery now opens as a separate page (gallery.html)

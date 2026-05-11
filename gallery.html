@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <meta name="description" content="Photo gallery of SAVITA SYNTHETICS â€” fabrics, facility and factory floor." />
+
+  <link rel="icon" type="image/jpeg" href="Images/logo.jpeg" />
+  <link rel="apple-touch-icon" href="Images/logo.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- â•â•â• FLOATING WHATSAPP â•â•â• -->
+  <a href="https://wa.me/919586607148" target="_blank" id="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.186-1.443A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.724.868.936-3.617-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+    <span class="wa-tooltip">Chat with us on WhatsApp</span>
+  </a>
+
+  <!-- â•â•â• NAVBAR â•â•â• -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="Images/logo.jpeg" alt="SAVITA SYNTHETICS Logo" class="logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#catalogue">Catalogue</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn-quote">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer">
+    <button id="drawer-close" aria-label="Close menu">âœ•</button>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#catalogue">Catalogue</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" class="drawer-quote">Get a Quote</a></li>
+    </ul>
+  </div>
+  <div id="drawer-overlay"></div>
+
+  <!-- â•â•â• PAGE HERO â•â•â• -->
+  <section class="gallery-page-hero">
+    <div class="container">
+      <p class="section-label">OUR WORK</p>
+      <h1 class="section-heading">Our Gallery</h1>
+      <div class="gold-underline centered"></div>
+      <p class="section-sub">A look inside our facility and the fabrics we craft.</p>
+    </div>
+  </section>
+  <div class="gallery-page-hero-border"></div>
+
+  <!-- â•â•â• FILTER TABS â•â•â• -->
+  <section class="gallery-page-body section-pad">
+    <div class="container">
+      <div class="gp-filters">
+        <button class="gp-filter active" data-filter="all">All</button>
+        <button class="gp-filter" data-filter="facility">Facility</button>
+        <button class="gp-filter" data-filter="fabrics">Fabrics</button>
+      </div>
+
+      <div class="gp-grid" id="gp-grid">
+
+        <!-- Facility -->
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="50">
+          <img src="Images/factory1.jpeg" alt="Factory Floor" loading="lazy" decoding="async" />
+          <span class="gp-label">Manufacturing Unit</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="100">
+          <img src="Images/Facility_1.png" alt="Facility" loading="lazy" decoding="async" />
+          <span class="gp-label">Facility</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="150">
+          <img src="Images/facility_2.png" alt="Facility Interior" loading="lazy" decoding="async" />
+          <span class="gp-label">Waterjet Machine</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="200">
+          <img src="Images/beams.png" alt="Fabric Beams" loading="lazy" decoding="async" />
+          <span class="gp-label">Fabric Beams</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="250">
+          <img src="Images/spindles.png" alt="Spindles" loading="lazy" decoding="async" />
+          <span class="gp-label">Spindles</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="300">
+          <img src="Images/machine.png" alt="Waterjet Machine" loading="lazy" decoding="async" />
+          <span class="gp-label">Waterjet Machine</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="350">
+          <img src="Images/warper.png" alt="Warper Machine" loading="lazy" decoding="async" />
+          <span class="gp-label">Warper Machine</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="400">
+          <img src="Images/worker.png" alt="Worker at Facility" loading="lazy" decoding="async" />
+          <span class="gp-label">Worker at Facility</span>
+        </div>
+        <div class="gp-item" data-cat="facility" data-aos="fade-up" data-aos-delay="450">
+          <img src="Images/tfo.png" alt="TFO Machine" loading="lazy" decoding="async" />
+          <span class="gp-label">TFO Machine</span>
+        </div>
+
+        <!-- Fabrics -->
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="100">
+          <img src="Images/Luxe JAcq 1.png" alt="Luxury Jacquard" loading="lazy" decoding="async" />
+          <span class="gp-label">Luxury Jacquard</span>
+        </div>
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="200">
+          <img src="Images/Lycra Silk 1.png" alt="Lycra Silk" loading="lazy" decoding="async" />
+          <span class="gp-label">Lycra Silk</span>
+        </div>
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="250">
+          <img src="Images/Nebula silk 1.png" alt="Nebula Silk" loading="lazy" decoding="async" />
+          <span class="gp-label">Nebula Silk</span>
+        </div>
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="300">
+          <img src="Images/I-silk.jpeg" alt="Super Silk" loading="lazy" decoding="async" />
+          <span class="gp-label">Super Silk</span>
+        </div>
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="350">
+          <img src="Images/Pocket lycra.jpeg" alt="Pocket Lycra" loading="lazy" decoding="async" />
+          <span class="gp-label">Pocket Lycra</span>
+        </div>
+        <div class="gp-item" data-cat="fabrics" data-aos="fade-up" data-aos-delay="450">
+          <img src="Images/sindoor.png" alt="Sindoor Variant" loading="lazy" decoding="async" />
+          <span class="gp-label">Sindoor</span>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top: 48px;">
+        <a href="index.html#gallery" class="btn-outline">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="lb-close" aria-label="Close"></button>
+    <button id="lb-prev" aria-label="Previous">&#8592;</button>
+    <button id="lb-next" aria-label="Next">&#8594;</button>
+    <div id="lb-img-wrap"><img id="lb-img" src="" alt="Gallery image" /></div>
+  </div>
+
+  <!-- â•â•â• FOOTER â•â•â• -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 Savita Synthetics. All rights reserved.</p>
+        <p>Crafted with precision in Surat, Gujarat.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 700, once: true, offset: 60 });</script>
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile drawer
+    const hamburger     = document.getElementById('hamburger');
+    const drawer        = document.getElementById('mobile-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerClose   = document.getElementById('drawer-close');
+    hamburger.addEventListener('click', () => { drawer.classList.add('open'); drawerOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
+    drawerClose.addEventListener('click', () => { drawer.classList.remove('open'); drawerOverlay.classList.remove('active'); document.body.style.overflow = ''; });
+    drawerOverlay.addEventListener('click', () => { drawer.classList.remove('open'); drawerOverlay.classList.remove('active'); document.body.style.overflow = ''; });
+    drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { drawer.classList.remove('open'); drawerOverlay.classList.remove('active'); document.body.style.overflow = ''; }));
+
+    // Filter
+    const filters = document.querySelectorAll('.gp-filter');
+    const items   = document.querySelectorAll('.gp-item');
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(item => {
+          item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+        });
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lb-img');
+    const lbClose  = document.getElementById('lb-close');
+    const lbPrev   = document.getElementById('lb-prev');
+    const lbNext   = document.getElementById('lb-next');
+    let lbImages = [], lbIndex = 0;
+
+    function openLb(idx) {
+      lbIndex = idx;
+      lbImg.src = lbImages[lbIndex].src;
+      lbImg.alt = lbImages[lbIndex].alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+
+    document.querySelectorAll('.gp-item img').forEach((img, i) => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        const visible = [...document.querySelectorAll('.gp-item')].filter(el => el.style.display !== 'none');
+        lbImages = visible.map(el => ({ src: el.querySelector('img').src, alt: el.querySelector('img').alt }));
+        const visibleIdx = visible.indexOf(img.closest('.gp-item'));
+        openLb(visibleIdx);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLb);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; lbImg.src = lbImages[lbIndex].src; });
+    lbNext.addEventListener('click', e => { e.stopPropagation(); lbIndex = (lbIndex + 1) % lbImages.length; lbImg.src = lbImages[lbIndex].src; });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') lbPrev.click();
+      if (e.key === 'ArrowRight') lbNext.click();
+    });
+  </script>
+</body>
+</html>
+
+
