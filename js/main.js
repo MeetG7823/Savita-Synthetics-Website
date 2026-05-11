@@ -251,7 +251,7 @@ new Swiper('.testimonials-swiper', {
 const aboutTrigger = document.getElementById('about-img-trigger');
 if (aboutTrigger) {
   aboutTrigger.addEventListener('click', () => {
-    lbImg.src = 'Images/factory1.jpeg';
+    lbImg.src = 'Images/factory1.webp';
     lbImg.alt = 'SAVITA SYNTHETICS Factory — Jayraj Textile Park, Surat';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
